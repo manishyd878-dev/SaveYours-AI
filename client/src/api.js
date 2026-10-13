@@ -1,0 +1,2 @@
+async function call(path,body){const r=await fetch(path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);const j=await r.json();if(!r.ok)throw new Error(j.error||'Request failed');return j;}
+export const api={scenarios:()=>call('/api/scenarios'),analyze:(messages,mode='rules')=>call('/api/analyze',{messages,mode}),evaluate:(includeAI=false)=>call('/api/evaluate',{includeAI}),redact:text=>call('/api/privacy/redact',{text}),health:()=>call('/api/health')};

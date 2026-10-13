@@ -1,0 +1,1 @@
+{"name":"echoshield-server","type":"module","scripts":{"start":"node src/index.js","dev":"node --watch src/index.js","test":"node --test"},"dependencies":{"@google/genai":"^2.29.1","cors":"^2.8.5","express":"^4.19.2"}}
